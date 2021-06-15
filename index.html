@@ -7,6 +7,7 @@
     <title>Rule of Thumb</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <link href="dist/bundle.css" rel="stylesheet">
 </head>
 <body>
     <nav class="nav" role="navigation">
@@ -97,9 +98,51 @@
             </button>
         </aside>
         <main role="main">
-            <!-- Start: Implementation -->
-            👉 Your code goes here 👈
-            <!-- End: Implementation -->
+            <div class="drop-down">
+                <h2>Previous Rulings</h2>
+                <select class="drop-down_list" name="list" id="rulings">
+                    <option value="list">List</option>
+                    <option value="grid">Grid</option>
+                </select>
+            </div>
+            <div class="opinion-card opinion-card-list" js-component="card-component">
+                <div class="opinion-card__content" style="display: none">
+                    <div class="opinion-card__subcontent">
+                        <div class="opinion-card__description">
+                            <div class="opinion-card__name">
+                                <button class="icon-button positive" aria-label="thumbs up" style="display: none;">
+                                    <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                </button>
+                                <button class="icon-button negative" aria-label="thumbs down" style="display: none;">
+                                    <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                </button>
+                               <h3></h3>
+                            </div>
+                            <p class ="opinion-card__description-text"></p>
+                            <p class ="opinion-card__eyebrow"></p>
+                        </div>
+                        <div class="opinion-card__votes">
+                            <button class="icon-button icon-button__vote-up" aria-label="thumbs up">
+                                <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                            </button>
+                            <button class="icon-button icon-button__vote-down" aria-label="thumbs down">
+                            <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                            </button>
+                            <button class="opinion-card__votes__vote">Vote Now</button>
+                        </div>
+                        <div class="opinion-card__gauge">
+                            <div class="opinion-card__gauge__thumbs-up">
+                                <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                <label class="opinion-card__gauge__percentage">70%</label>
+                            </div>
+                            <div class="opinion-card__gauge__thumbs-down">
+                                <label class="opinion-card__gauge__percentage">30%</label>
+                                <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                            </div>
+                        </div>
+                        </div>
+                </div>
+            </div>
         </main>
         <aside class="banner banner-bottom" role="doc-tip" aria-label="Submit a name">
             <img
@@ -149,5 +192,6 @@
             </div>
         </footer>
     </div>
+    <script src="dist/bundle.js"></script>
 </body>
 </html>
