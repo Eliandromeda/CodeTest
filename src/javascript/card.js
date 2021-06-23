@@ -86,8 +86,9 @@ class Card extends BaseComponent {
     this.thumbsDownContent = card.querySelector(`${SELECTORS.GAUGE_THUMPS_DOWN}`);
     this.thumbsDownText = card.querySelector(`${SELECTORS.GAUGE_THUMPS_DOWN} label`);
 
-    const voteTextPositive = `${votesAverage[0].positive}%`;
-    const voteTextNegative = `${votesAverage[1].negative}%`;
+    const [positive, negative] = votesAverage;
+    const voteTextPositive = `${positive}%`;
+    const voteTextNegative = `${negative}%`;
 
     this.thumbsUpContent.style.width = voteTextPositive;
     this.thumbsUpText.innerText = voteTextPositive;
@@ -107,11 +108,11 @@ class Card extends BaseComponent {
     const negative = description.querySelector(SELECTORS.THUMBS_NEGATIVE);
 
     if(votes.positive > votes.negative) {
-      positive.style.display= "block";
-      negative.style.display = "none";
+      positive.style.display= 'block';
+      negative.style.display = 'none';
     } else {
-      negative.style.display= "block";
-      positive.style.display = "none";
+      negative.style.display= 'block';
+      positive.style.display = 'none';
     }
   }
 
