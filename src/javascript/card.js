@@ -86,9 +86,8 @@ class Card extends BaseComponent {
     this.thumbsDownContent = card.querySelector(`${SELECTORS.GAUGE_THUMPS_DOWN}`);
     this.thumbsDownText = card.querySelector(`${SELECTORS.GAUGE_THUMPS_DOWN} label`);
 
-    const [positive, negative] = votesAverage;
-    const voteTextPositive = `${positive}%`;
-    const voteTextNegative = `${negative}%`;
+    const voteTextPositive = `${votesAverage[0].positive}%`;
+    const voteTextNegative = `${votesAverage[1].negative}%`;
 
     this.thumbsUpContent.style.width = voteTextPositive;
     this.thumbsUpText.innerText = voteTextPositive;
@@ -128,7 +127,6 @@ class Card extends BaseComponent {
       const voteType = {};
       voteType[key] = (votes[key] / totalVotes * 100).toFixed(2);
       return voteType;
-      ;
     });
     return percentages;
   }
